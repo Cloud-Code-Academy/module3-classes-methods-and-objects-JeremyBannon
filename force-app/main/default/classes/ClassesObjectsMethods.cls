@@ -39,18 +39,23 @@ public with sharing class ClassesObjectsMethods {
      * @return A list containing the length of the string, a substring of the string, and the string in lower case.
      */
     public static List<String> practiceStringMethods() {
+        List<String> finalList = new List<String>();
         // Initialize a String with 'Hello, Salesforce!'
-        
-        // Get the length of the String        
+        String str = 'Hello, Salesforce!';
+        // Get the length of the String 
+        Integer strLength = str.length();
+        finalList.add(strLength.toString());       
         // Get a substring of the String of the first 5 characters
+        finalList.add(str.substring(0, 5));
         // Convert the String to lower case
-        
+        finalList.add(str.toLowerCase());
         // Return the list with the string data
+
         // In the first position add the string length
         // In the second position add the substring
         // In the third position add the string in lower case
 
-        return null; // Replace null with the variable you used to store the result
+        return finalList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -61,15 +66,17 @@ public with sharing class ClassesObjectsMethods {
      * @return A list of boolean values indicating whether the string starts with 'Sales', ends with 'Force', or contains 'Awesome'.
      */
     public static List<Boolean> checkStringContent(String input) {
+        
+        List<Boolean> finalList = new List<Boolean>();
         // Initialize a list to store the results
         
         // Check if the string starts with 'Sales'
-        
+        finalList.add(input.startsWith('Sales'));
         // Check if the string ends with 'Force'
-        
+        finalList.add(input.endsWith('Force'));
         // Check if the string contains 'Awesome'
-        
-        return null; // Replace null with the variable you used to store the result
+        finalList.add(input.contains('Awesome'));
+        return finalList; // Replace null with the variable you used to store the result
     }
 
     /**
