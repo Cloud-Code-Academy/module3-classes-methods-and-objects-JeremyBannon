@@ -171,7 +171,7 @@ public with sharing class ClassesObjectsMethods {
         Integer min = 50;
         Integer max = 100;
 
-        Integer result = (Integer)(Integer)(Math.random() * (max - min +1)) + min;
+        Integer result = (Integer)(Math.random() * (max - min +1)) + min;
         // Return the random integer
         return result; // Replace null with the variable you used to store the result
     }
