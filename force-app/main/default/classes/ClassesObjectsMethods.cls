@@ -108,18 +108,16 @@ public with sharing class ClassesObjectsMethods {
      * @return The number of vowels in the string.
      */
     public static Integer countVowels(String str) {
-        // Initialize the result Integer
-
-        /*
-        for () {
-            // get individual characters from the string - hint use substring or split
-            // check if the character is a vowel
-            // if it is a vowel, increment the result Integer
-        }
-        */
-
-        return null; // Replace null with the variable you used to store the result
+        List<String> vowelsList = new List<String>{'a', 'e', 'i', 'o', 'u'};
+    // Initialize the result Integer
+    Integer numberOfVowels = 0;
+    
+    for(String vowel : vowelsList){
+        numberOfVowels += str.countMatches(vowel);
     }
+
+    return numberOfVowels; // Replace null with the variable you used to store the result
+}
 
     /**
      * Question 5
