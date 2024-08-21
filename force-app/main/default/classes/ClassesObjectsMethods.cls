@@ -184,13 +184,15 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String getCurrentDate() {
         // Get the todays date
+        String myDate = Date.today().format();
 
+        
+        
         // Format the current date
 
         // Return the result
-        return null; // Replace null with the variable you used to store the result
+        return myDate; // Replace null with the variable you used to store the result
     }
-
     /**
      * Question 9
      * Given a date time return the day of the week in number format
