@@ -202,13 +202,22 @@ public with sharing class ClassesObjectsMethods {
     public static String getDayOfWeek(DateTime dt) {
         // Define a map of day of the week as a key and day number as the value
         // Monday = 1, Tuesday = 2, etc.
+        Map<String, Integer> daysOfTheWeek = new Map<String,Integer>();
+
+        daysOfTheWeek.put('Monday', 1);
+        daysOfTheWeek.put('Tuesday', 2);
+        daysOfTheWeek.put('Wednesday', 3);
+        daysOfTheWeek.put('Thursday', 4);
+        daysOfTheWeek.put('Friday', 5);
+        daysOfTheWeek.put('Saturday', 6);
+        daysOfTheWeek.put('Sunday', 7);
 
         // Get the day name using .format('EEEE');
-
+        String dayOfWeek = dt.format('EEEE');
         // Get the day number from the map using the day name
-
+        Integer dayNumber = daysOfTheWeek.get(dayOfWeek);
         // Return the result as a string
-        return null; // Replace null with the variable you used to store the result
+        return String.valueOf(dayNumber); // Replace null with the variable you used to store the result
     }
 
 
@@ -222,12 +231,12 @@ public with sharing class ClassesObjectsMethods {
      * @return The a positive number years between the two dates, or null if either date is null.
      */
     public static Integer calculateYearDifference(Date d1, Date d2) {
-
+        
         // Subtract the difference in years
-
+    
+        
         return null; // Replace null with the variable you used to store the result
     }
-
     /**
      * Question 11
      * The Book class represents a book in a library. 
