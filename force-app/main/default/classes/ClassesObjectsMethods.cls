@@ -264,7 +264,8 @@ public with sharing class ClassesObjectsMethods {
     
         // Method that returns the details of the book
         public String getBookDetails() {
-            String bookDetails = ('Title:' + title +  ', Author:' + author);
+            String bookDetails = 'Title: ' + title + ', Author: ' + author;
+            
             // return A string containing the details of the book in the format "Title: <title>, Author: <author>"
             return bookDetails; // Replace null with the variable you used to store the result
         }
@@ -279,13 +280,13 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String createAndGetBookDetails() {
         // Create a Book object with title "A Brief History of Time" and author "Stephen Hawking"
-
+        Book newBook = new Book('A Brief History of Time', 'Stephen Hawking');
+        String result = newBook.getBookDetails();
         // Call the getBookDetails method on the book object to get the details of the book
 
         // Return the details of the book
-        return null; // Replace null with the variable you used to store the result
+        return result; // Replace null with the variable you used to store the result
     }
-
     /**
      * Question 13
      * Create and update two Book objects and returns the books.
