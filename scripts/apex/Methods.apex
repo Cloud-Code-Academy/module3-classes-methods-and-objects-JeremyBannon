@@ -1,32 +1,57 @@
 /**
-     * Question 5
-     * Given a list of scientist names, combine their names together with a comma if it contains the letter 'g'.
-     * The final string should not end with a comma.
-     * Example: findTheScientist() should return "Alan Turing,Grace Hopper,Guido van Rossum,Stephen Hawking"
-     * @return A string containing the names of scientists that contain the letter 'g'.
+     * Question 15
+     * Create a Person object and returns the details of the person.
+     * For example, personDetails() should return a list like ["Hello, my name is John Doe and I am 28 years old.", "John Doe", "28"].
+     * @return A string containing the details of the person.
      */
-    public static String findTheScientist() {
-        // The list of scientists' names
-        List<String> scientistNames = new List<String>{'Tim Berners-Lee', 'Alan Turing', 'Grace Hopper', 'Donald Knuth', 'Guido van Rossum', 'Ken Thompson', 'Stephen Hawking'};
+    public class Person {
+      // Declare private two instance variables - (TEXT) name and (Number) age
+      private String name;
+      private Integer age;
+      // Constructor to initialize the name and age
+      public Person(String name, Integer age){
+          this.name = name;
+          this.age = age;
+      }
+      // Method introduceYourself that returns the details of the person 
+      public String introduceYourself(){
+          String result = 'Hello, my name is ' + name + ' and I am ' + age + ' years old.';
+          return result;
+      }        
+      // Return a string in the format "Hello, my name is <name> and I am <age> years old."
+      // For example, introduceYourself() should return a string like "Hello, my name is John Doe and I am 28 years old."
 
-        // The variable to store the concatenated string
-        String finalNames = '';
-        
-        // Loop through the list of scientists' names
-        for(String names : scientistNames){
-          // If the name doesn't contain the letter 'G', skip this iteration
+      // Getter method that returns the name of the person
+      public String getName(){
+          return name;
+      }
+      // Getter method that returns the age of the person
+      public Integer getAge(){
+          return age;
+      }
+      // Setter method that sets the name of the person
+      public void setName(String nameOfPerson){
+          name = nameOfPerson;
+      }
+      // Setter method that sets the age of the person
+      public void setAge(Integer ageOfPerson){
+          age = ageOfPerson;
+      }
+  }
+    public static List<String> personDetails() {
+      List<String> results = new List<String>();
+      // Create a new instance of Person class
+      Person myPerson = new Person('John Doe', 28);
+      // Name the person 'John Doe' and set the age to 28
 
-          if(!names.toLowerCase().contains('g')){
-                continue;
-              }
-          // Add the name to the result string, followed by a comma
-              finalNames += names + ',';
-        }
-        
-          // Remove the last comma from the result string
-        if(!String.isBlank(finalNames)){
-          finalNames = finalNames.substring(0, finalNames.length() -1);
-        }
-        return finalNames; // Replace null with the variable you used to store the result
-    }
-    System.debug(findTheScientist());    
+      // Add the details of the person using the introduceYourself method
+      results.add(myPerson.introduceYourself());
+      // Get the name of the person using the getter method and add it to the list
+      results.add(myPerson.getName());
+      // Get the age of the person using the getter method and add it to the list
+      results.add(String.valueOf(myPerson.getAge()));
+      
+    return results; // Replace null with the variable you used to store the result
+  }
+
+    System.debug(personDetails());    
